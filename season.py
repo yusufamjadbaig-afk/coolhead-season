@@ -340,8 +340,8 @@ class Money:
     ac_cop: float = 3.0                    # heat removed per unit of electricity, typical split AC (assumption)
     roof_area_m2: float = 100.0
     paint_per_m2: float = 340.0            # one painting; middle of Rs 273-409 (cost sheet, Berger price)
-    wet_canopy_per_m2: float = 2952.0      # fabric, frame, sheet, drip line (cost sheet)
-    dry_canopy_per_m2: float = 2462.0      # the same without the drip line
+    wet_canopy_per_m2: float = 3034.0      # fabric, frame, sheet, drip line (cost sheet)
+    dry_canopy_per_m2: float = 2544.0      # the same without the drip line
     shared_set: float = 13620.0            # Arduino, sensors, solar panel, battery, pump, tank (one per roof)
     fabric_per_m2: float = 880.0           # 2 m of canvas per m² of canopy (cost sheet)
     fabric_every_seasons: float = 1.0      # untreated cotton weakens after one to two summers
@@ -355,7 +355,7 @@ MONEY_DEFAULTS = {
     # Hong Kong: CLP 2026 average net tariff HK$1.406 per kWh. Parts are the Pakistani prices
     # converted at about Rs 35.7 per HK$ until Hong Kong prices are added to the cost sheet.
     "Hong Kong": Money(currency="HK$", electricity_per_kwh=1.41, paint_per_m2=9.5,
-                       wet_canopy_per_m2=82.7, dry_canopy_per_m2=69.0, shared_set=381.5,
+                       wet_canopy_per_m2=85.0, dry_canopy_per_m2=71.3, shared_set=381.5,
                        fabric_per_m2=24.6, battery=118.8),
 }
 
