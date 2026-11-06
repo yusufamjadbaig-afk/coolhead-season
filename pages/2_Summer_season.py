@@ -72,10 +72,12 @@ with st.sidebar:
     md = ss.MONEY_DEFAULTS[city]
     cur = md.currency
     with st.expander("Prices and your home"):
-        st.caption("Pakistan prices come from our cost sheet (29 Oct 2026). Hong Kong part prices are the "
-                   "Pakistani ones converted until we have Hong Kong quotes.")
+        st.caption("Pakistan prices come from our cost sheet for a 5 × 5 m canopy (online prices checked 29 Oct "
+                   "2026; canvas from a local market in Faisalabad). Hong Kong part prices are the Pakistani ones "
+                   "converted until we have Hong Kong quotes.")
         k = city
-        area = st.number_input("Roof area (m²)", 10.0, 1000.0, md.roof_area_m2, 10.0, key=f"{k}area")
+        area = st.number_input("Canopy area sharing one controller set (m²)", 5.0, 1000.0, md.roof_area_m2, 5.0,
+                               key=f"{k}area")
         elec = st.number_input(f"Electricity price ({cur} per kWh)", 0.0, 500.0, md.electricity_per_kwh,
                                key=f"{k}elec")
         cop = st.number_input("Air conditioner efficiency (heat moved per unit of electricity)", 1.0, 6.0,
@@ -87,10 +89,10 @@ with st.sidebar:
                                    key=f"{k}wet")
         dry_cost = st.number_input(f"Shade-only canopy parts ({cur} per m²)", 0.0, 100000.0, md.dry_canopy_per_m2,
                                    key=f"{k}dry")
-        shared = st.number_input(f"Controller, solar panel, battery, pump and tank ({cur}, one per roof)", 0.0,
+        shared = st.number_input(f"Controller, solar panel, battery, pump and tank ({cur}, one per canopy)", 0.0,
                                  1e7, md.shared_set, key=f"{k}shared",
-                                 help="Priced for a 1 m² test panel. A whole roof needs a bigger pump, tank "
-                                      "and solar panel, so this is too low for a big roof.")
+                                 help="Priced with a small pump and solar panel. A much bigger canopy needs a "
+                                      "bigger pump and panel, so this is too low for one.")
         fabric = st.number_input(f"New canvas ({cur} per m²)", 0.0, 10000.0, md.fabric_per_m2, key=f"{k}fab")
         fabric_n = st.number_input("Replace the canvas every … seasons", 0.5, 5.0, md.fabric_every_seasons, 0.5,
                                    key=f"{k}fabn", help="Untreated cotton weakens after one to two summers in sun.")
