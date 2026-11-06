@@ -338,12 +338,12 @@ class Money:
     currency: str = "Rs"
     electricity_per_kwh: float = 45.0      # NEPRA FY2025-26 base rate (Rs 38 for 301-400 units) + ~18% tax
     ac_cop: float = 3.0                    # heat removed per unit of electricity, typical split AC (assumption)
-    roof_area_m2: float = 100.0
+    roof_area_m2: float = 25.0             # canopy area sharing one controller set: a 5 x 5 m canopy
     paint_per_m2: float = 340.0            # one painting; middle of Rs 273-409 (cost sheet, Berger price)
-    wet_canopy_per_m2: float = 3034.0      # fabric, frame, sheet, drip line (cost sheet)
-    dry_canopy_per_m2: float = 2544.0      # the same without the drip line
-    shared_set: float = 13620.0            # Arduino, sensors, solar panel, battery, pump, tank (one per roof)
-    fabric_per_m2: float = 880.0           # 2 m of canvas per m² of canopy (cost sheet)
+    wet_canopy_per_m2: float = 938.5       # canvas, frame, sheet, drip line, labour for a 5 x 5 m canopy (cost sheet)
+    dry_canopy_per_m2: float = 840.5       # the same without the drip line
+    shared_set: float = 13620.0            # Arduino, sensors, solar panel, battery, pump, tank (one per canopy)
+    fabric_per_m2: float = 330.0           # canvas at Rs 300 per m² (local market, Faisalabad) + 10% for hems
     fabric_every_seasons: float = 1.0      # untreated cotton weakens after one to two summers
     battery: float = 4240.0
     battery_every_seasons: float = 3.0     # sealed lead-acid: about 2-5 years in heat
